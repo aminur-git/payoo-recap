@@ -5,6 +5,15 @@ document
     const cashoutAmount = getInputFieldValueById("input-cashout-money");
     const pinNumber = getInputFieldValueById("input-cashout-pin");
     const currentBalance = getTextFieldValueById("current-balance");
+
+    if (isNaN(cashoutAmount)) {
+      alert("Failed to Cash-Out!");
+
+      document.getElementById("input-cashout-pin").value = "";
+      document.getElementById("input-cashout-money").value = "";
+      return;
+    }
+
     if (pinNumber === 2525) {
       const newBalance = currentBalance - cashoutAmount;
       document.getElementById("current-balance").innerText = newBalance;
@@ -15,7 +24,7 @@ document
       div.innerHTML = `
         <h4 class="text-xl font-semibold">Cash Out</h4>
         <p>${cashoutAmount} Withdraw. New Balance ${newBalance} </P> `;
-        document.getElementById('transaction-section').appendChild(div)
+      document.getElementById("transaction-section").appendChild(div);
 
       document.getElementById("input-cashout-pin").value = "";
       document.getElementById("input-cashout-money").value = "";
