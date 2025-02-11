@@ -15,9 +15,13 @@ document
     }
 
     if (pinNumber === 2525) {
+      if (cashoutAmount > currentBalance) {
+        alert("You Do Not Have Sufficient Balance!");
+        return ;
+      }
+
       const newBalance = currentBalance - cashoutAmount;
       document.getElementById("current-balance").innerText = newBalance;
-
       // add to transaction history:
       const div = document.createElement("div");
       div.classList.add("bg-blue-100", "p-4", "rounded-md");
