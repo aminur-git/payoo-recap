@@ -11,9 +11,9 @@ document
 
       // add to transaction history:
       const div = document.createElement("div");
-      div.classList.add("bg-yellow-100");
+      div.classList.add("bg-blue-100", "p-4", "rounded-md");
       div.innerHTML = `
-        <h4 class="text-2xl font-semibold">Cash Out</h4>
+        <h4 class="text-xl font-semibold">Cash Out</h4>
         <p>${cashoutAmount} Withdraw. New Balance ${newBalance} </P> `;
         document.getElementById('transaction-section').appendChild(div)
 

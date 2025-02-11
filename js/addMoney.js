@@ -4,6 +4,14 @@ document
         event.preventDefault();
         const addMoney = getInputFieldValueById('input-money');
         const pinNumber = getInputFieldValueById('input-pin');
+        if(isNaN(addMoney)){
+            alert('Failed to add money!')
+            
+            document.getElementById('input-money').value = '';
+            document.getElementById('input-pin').value = '';
+            return;
+        }
+
         if (pinNumber === 2525 ) {
             const balance = getTextFieldValueById('current-balance');
             const newBalance = balance + addMoney;
